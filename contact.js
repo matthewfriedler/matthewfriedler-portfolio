@@ -11,7 +11,7 @@
   var status = document.getElementById("form-status");
   var success = document.getElementById("form-success");
   var button = form.querySelector('button[type="submit"]');
-  var buttonLabel = button.textContent;
+  var buttonLabel = button.innerHTML;
   var attempted = false;
 
   var rules = {
@@ -81,7 +81,8 @@
 
   function setSending(sending) {
     button.disabled = sending;
-    button.textContent = sending ? "Sending…" : buttonLabel;
+    if (sending) button.textContent = "Sending…";
+    else button.innerHTML = buttonLabel;
     form.setAttribute("aria-busy", sending ? "true" : "false");
   }
 

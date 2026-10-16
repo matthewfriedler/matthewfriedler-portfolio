@@ -1,13 +1,21 @@
 # CLAUDE.md — matthewfriedler-portfolio
 
-Personal portfolio for Matthew Friedler (Training Specialist at Contentsquare, SF;
-targeting solutions consulting / presales roles). Goes on job applications:
-clean, credible, legible. These decisions are settled — don't re-litigate them.
+Personal portfolio for Matthew Friedler (Training Specialist at Contentsquare, SF).
+Clean, credible, legible, with some life to it. These decisions are settled —
+don't re-litigate them.
+
+## Tone (decided)
+- Describe what Matthew does **now**. Do NOT say he is job searching, "looking
+  for" roles, or "open to opportunities". Contact copy is "open to connect /
+  happy to talk", not "hire me".
+- First person, plain, no buzzwords.
 
 ## Stack (decided)
 - Plain HTML + one shared stylesheet (`styles.css`). No framework, no React,
   no Tailwind, no build step. Vercel serves the files as-is.
-- Vanilla JS only where genuinely needed (the contact form, `contact.js`).
+- Vanilla JS only where genuinely needed: `contact.js` (the form) and `site.js`
+  (sticky-header shadow + scroll reveal). The site must work with JS off;
+  `.reveal` only hides content when `<html class="js">` is set.
 - One serverless function: `api/contact.js` (Node, CommonJS) → Resend REST API
   via `fetch`. No `resend` SDK.
 - **Zero npm dependencies.** No `package.json`. Ask Matthew before adding any.
@@ -18,6 +26,8 @@ clean, credible, legible. These decisions are settled — don't re-litigate them
 ## Pages
 - `index.html` — Home (hero, at-a-glance facts)
 - `about.html` — About, headshot (`assets/headshot.jpg`), project cards
+  (Russian Flashcards, BarPulse, Split the Tab). Home shows short teasers of the
+  same projects — update both when adding one.
 - `contact.html` — Contact form
 
 Header and footer are **copied by hand** into each page (no JS includes, to
@@ -26,33 +36,41 @@ avoid a flash of missing nav). When you change one, change all three. Only
 
 ## Design tokens (all in `:root` in styles.css)
 Type pairing: **Source Serif 4** (headings, 600) + **Source Sans 3** (body/UI).
-Same superfamily, so they harmonise; serif headings read considered rather
-than startup-generic; the sans is very legible at small sizes.
 
-| Token | Value | Use |
-|---|---|---|
-| `--bg` | `#f7f9fb` | page background (cool off-white, NOT cream) |
-| `--surface` | `#ffffff` | header, footer, cards, inputs |
-| `--ink` | `#16202a` | body text |
-| `--muted` | `#4b5868` | secondary text (AA on bg) |
-| `--line` | `#d9dfe6` | borders, dividers |
-| `--accent` | `#1d4e7a` | links, buttons, focus ring (~8.5:1 on white) |
-| `--accent-strong` | `#143a5c` | hover/active |
-| `--accent-tint` | `#e8eff6` | secondary button hover |
-| `--error` | `#b42318` | form errors only |
-| `--success` | `#1e7a4c` | form success only |
+Palette: **dark forest green** brand with a **mint** highlight. Dark bands
+(header, hero, CTA, footer) alternate with a cool green-grey page.
 
-Why navy/slate: the audience is B2B SaaS hiring managers; it reads
-enterprise-credible. One accent, no gradients, colour only means "interactive".
-Explicitly avoided: cream + terracotta, near-black + acid green. Light theme only.
+| Token | Value | Use | Contrast |
+|---|---|---|---|
+| `--forest-900` | `#0e2a1f` | header, hero bands, CTA, footer | white 15.3:1 |
+| `--forest` | `#1a4d3a` | links, primary buttons, borders | 9.7:1 on white |
+| `--forest-strong` | `#123a2b` | hover / pressed | |
+| `--mint` | `#9be0bd` | highlight on dark; buttons on dark | 10:1 on forest-900 |
+| `--mint-tint` | `#e5f2eb` | tags, icon tiles | forest-strong 10.9:1 |
+| `--bg` | `#f4f7f5` | page (cool green-grey — NOT cream) | ink 15.4:1 |
+| `--ink` | `#13211b` | body text | |
+| `--muted` | `#4a5b53` | secondary text | 6.7:1 on bg |
+| `--on-dark-muted` | `#b9cfc4` | secondary text on dark | 9.3:1 |
+| `--line` | `#d3ddd7` | dividers | |
+| `--field-border` | `#77887f` | input borders | 3.7:1 (UI needs 3:1) |
+| `--error` / `--success` | `#b42318` / `#1e7a4c` | form states only | |
 
-Type scale: `--text-sm` … `--text-3xl` (fluid `clamp()`, ~1.25 ratio, base 16→18px).
+Hero glows use `#245f47`; even at full strength text on it is ≥ 4.5:1.
+Focus ring is forest on light, mint inside `.on-dark` (via `--focus`).
+Avoided: cream + terracotta, near-black + acid green.
+
+Type scale: `--text-sm` … `--text-3xl` (fluid `clamp()`, ~1.25 ratio).
 Spacing scale (4px base): `--space-1` 4 · `-2` 8 · `-3` 12 · `-4` 16 · `-5` 24 ·
 `-6` 32 · `-7` 48 · `-8` 64 · `-9` 96. **Use only these** for margin/padding/gap.
 
+Motion (all disabled under `prefers-reduced-motion`): hero text entrance,
+drifting hero glows, mint underline that draws under the highlighted word,
+scroll reveal (`.reveal`, stagger with `style="--i:N"`), card lift + top-bar
+sweep on hover/focus, nav underline slide, button arrow nudge.
+
 Accessibility rules: visible `:focus-visible` ring everywhere; skip link;
-44px min touch targets on buttons; `prefers-reduced-motion` kills transitions;
-`overflow-wrap` set so long URLs/emails never cause horizontal scroll at 375px.
+44px min touch targets; `overflow-wrap` so long URLs/emails never cause
+horizontal scroll at 320px; decorative SVGs `aria-hidden`.
 
 ## Contact form
 - `contact.html` + `contact.js` (client validation, inline errors, success panel,
@@ -71,7 +89,8 @@ Accessibility rules: visible `:focus-visible` ring everywhere; skip link;
 - curl `/api/contact` with: GET, `{}`, bad email, honeypot filled, valid payload.
 - Browser at 375 / 768 / 1280 (and 320 for reflow): no horizontal scroll.
 - axe-core (WCAG 2.2 AA + best-practice): 0 violations; every Tab stop shows
-  the focus ring.
+  the focus ring. Run axe AFTER reveal animations finish (mid-fade colours
+  are semi-transparent and produce false contrast failures).
 
 ## Run locally
 ```

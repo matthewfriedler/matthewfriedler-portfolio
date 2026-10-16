@@ -3,21 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matthew Friedler — Training Specialist, Contentsquare</title>
-  <meta name="description" content="Matthew Friedler is a Training Specialist at Contentsquare in San Francisco, looking for solutions consulting and presales roles.">
+  <title>Matthew Friedler — Training Specialist at Contentsquare</title>
+  <meta name="description" content="Matthew Friedler is a Training Specialist at Contentsquare in San Francisco who builds small web apps to learn by doing.">
+  <meta name="theme-color" content="#0e2a1f">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="/site.js" defer></script>
+</head><body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Shared header: keep identical across index.html, about.html, contact.html
        (only aria-current moves). -->
-  <header class="site-header">
+  <header class="site-header on-dark">
     <div class="container site-header__inner">
-      <a class="site-name" href="/">Matthew Friedler</a>
+      <a class="site-name" href="/"><span class="site-name__mark" aria-hidden="true">MF</span>Matthew Friedler</a>
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="/" aria-current="page">Home</a></li>
@@ -29,43 +31,86 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container">
-        <h1>Matthew Friedler</h1>
-        <p class="lede">I’m a Training Specialist at Contentsquare. I teach customer teams how to use the platform to understand how people actually use their websites and apps — and what to change as a result.</p>
-        <p class="lede">I’m now looking for a solutions consulting or presales role, where learning a customer’s problem and showing how the product solves it is the whole job.</p>
-        <div class="button-row">
-          <a class="button" href="/about">About me and my projects</a>
-          <a class="button button--secondary" href="/contact">Get in touch</a>
+    <section class="hero hero--home on-dark">
+      <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow enter" style="--i:0">Training Specialist · Contentsquare</p>
+        <h1 class="enter" style="--i:1">I help teams see what their customers <span class="highlight">actually</span> do.</h1>
+        <p class="lede enter" style="--i:2">I’m Matthew Friedler, based in San Francisco. I teach customer teams to use digital experience analytics to understand how people use their websites and apps — and to decide what to change.</p>
+        <p class="lede enter" style="--i:3">Outside work, I build small web apps to learn by doing.</p>
+        <div class="button-row enter" style="--i:4">
+          <a class="button" href="/about#projects">See my projects <span class="button__arrow" aria-hidden="true">→</span></a>
+          <a class="button button--secondary" href="/contact">Let’s connect</a>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="facts-heading">
+    <section aria-labelledby="facts-heading">
       <div class="container">
         <h2 id="facts-heading" class="visually-hidden">At a glance</h2>
-        <dl class="facts">
-          <div>
+        <dl class="facts facts--overlap">
+          <div class="reveal" style="--i:0">
             <dt>Currently</dt>
-            <dd>Training Specialist, Contentsquare</dd>
+            <dd>Training Specialist at Contentsquare</dd>
           </div>
-          <div>
-            <dt>Looking for</dt>
-            <dd>Solutions consulting and presales</dd>
+          <div class="reveal" style="--i:1">
+            <dt>Focus</dt>
+            <dd>Customer education and digital experience analytics</dd>
           </div>
-          <div>
+          <div class="reveal" style="--i:2">
             <dt>Based in</dt>
             <dd>San Francisco, CA</dd>
           </div>
         </dl>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="built-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Side projects</p>
+          <h2 id="built-heading">Things I’ve built</h2>
+          <p>Small apps I made to learn something new by doing it.</p>
+        </div>
+        <div class="projects">
+          <article class="project project--teaser reveal" style="--i:0">
+            <div class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg></div>
+            <h3 class="project__name">Russian Flashcards</h3>
+            <p class="project__summary">277 phrases, audio at two speeds, spaced repetition.</p>
+          </article>
+          <article class="project project--teaser reveal" style="--i:1">
+            <div class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <h3 class="project__name">BarPulse</h3>
+            <p class="project__summary">Live bar crowds and wait times in the Marina and Cow Hollow.</p>
+          </article>
+          <article class="project project--teaser reveal" style="--i:2">
+            <div class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+            <h3 class="project__name">Split the Tab</h3>
+            <p class="project__summary">Photo a receipt, tap who had what, get a fair split.</p>
+          </article>
+        </div>
+        <p class="reveal" style="margin-top: var(--space-6)"><a class="arrow-link" href="/about#projects">Details, tech and links <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta on-dark reveal">
+          <div>
+            <h2 id="cta-heading">Always happy to connect</h2>
+            <p>Customer education, digital analytics, a side project you’re building — I’m open to a conversation.</p>
+          </div>
+          <a class="button" href="/contact">Get in touch <span class="button__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Shared footer: keep identical across all pages. -->
-  <footer class="site-footer">
+  <footer class="site-footer on-dark">
     <div class="container site-footer__inner">
-      <p>© 2026 Matthew Friedler</p>
+      <p>© 2026 Matthew Friedler · San Francisco</p>
       <ul>
         <li><a href="https://www.linkedin.com/in/matthewfriedler/">LinkedIn</a></li>
         <li><a href="https://github.com/matthewfriedler">GitHub</a></li>
