@@ -84,6 +84,7 @@ html {
 }
 img, svg { display: block; max-width: 100%; height: auto; }
 input, button, textarea, select { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
 
 /* ---------- Base ---------- */
 body {
@@ -391,6 +392,100 @@ main { flex: 1; }
   padding-top: var(--space-2);
   font-weight: 600;
 }
+
+/* ---------- Contact ---------- */
+.contact {
+  display: grid;
+  gap: var(--space-7);
+  align-items: start;
+}
+@media (min-width: 64em) {
+  .contact { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-8); }
+}
+
+.contact-links {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  padding-top: var(--space-2);
+}
+.contact-links li { display: flex; flex-direction: column; min-width: 0; }
+.contact-links__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Form ---------- */
+.form {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+@media (min-width: 48em) {
+  .form { padding: var(--space-6); }
+}
+.field { display: grid; gap: var(--space-2); min-width: 0; }
+.field label { font-weight: 600; }
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  border: 1px solid #7a8694; /* ~3.7:1 against white (WCAG 1.4.11 needs 3:1) */
+  border-radius: var(--radius);
+  line-height: 1.5;
+}
+.field textarea { resize: vertical; min-height: 9rem; }
+.field input:hover,
+.field textarea:hover { border-color: var(--muted); }
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 0;
+  border-color: var(--accent);
+}
+.field [aria-invalid="true"] { border-color: var(--error); }
+.field__error {
+  color: var(--error);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+.field__error:empty { display: none; }
+
+/* Honeypot — off-screen, not display:none (some bots skip hidden fields) */
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#form-status:empty { display: none; }
+
+.form__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.button:disabled { opacity: 0.7; cursor: progress; }
+
+.notice {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius);
+  border: 1px solid;
+  border-left-width: 4px;
+}
+.notice > * + * { margin-top: var(--space-2); }
+.notice h2 { font-size: var(--text-xl); }
+.notice--error { border-color: var(--error); background: #fdf3f2; color: var(--ink); }
+.notice--success { border-color: var(--success); background: #f0f8f4; color: var(--ink); }
+.notice--success h2 { color: var(--success); }
+.notice:focus-visible { outline-offset: 3px; }
 
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {

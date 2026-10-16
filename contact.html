@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Matthew Friedler</title>
+  <meta name="description" content="Get in touch with Matthew Friedler about solutions consulting and presales roles.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/contact.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared header: keep identical across index.html, about.html, contact.html
+       (only aria-current moves). -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-name" href="/">Matthew Friedler</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container contact">
+        <div class="contact__intro stack">
+          <h1>Get in touch</h1>
+          <p class="lede">Hiring for solutions consulting or presales, or just want to talk shop? Send me a note and I’ll reply by email.</p>
+          <ul class="contact-links">
+            <li><span class="contact-links__label">Email</span>
+              <a class="break-anywhere" href="mailto:matthewfriedler@gmail.com">matthewfriedler@gmail.com</a></li>
+            <li><span class="contact-links__label">LinkedIn</span>
+              <a class="break-anywhere" href="https://www.linkedin.com/in/matthewfriedler/">linkedin.com/in/matthewfriedler</a></li>
+            <li><span class="contact-links__label">GitHub</span>
+              <a class="break-anywhere" href="https://github.com/matthewfriedler">github.com/matthewfriedler</a></li>
+          </ul>
+        </div>
+
+        <div class="contact__form">
+          <noscript>
+            <p class="notice notice--error">The form needs JavaScript. You can email me directly at
+              <a class="break-anywhere" href="mailto:matthewfriedler@gmail.com">matthewfriedler@gmail.com</a>.</p>
+          </noscript>
+
+          <form id="contact-form" class="form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required
+                     aria-describedby="name-error">
+              <p class="field__error" id="name-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required
+                     aria-describedby="email-error">
+              <p class="field__error" id="email-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" minlength="10" maxlength="5000" required
+                        aria-describedby="message-error"></textarea>
+              <p class="field__error" id="message-error"></p>
+            </div>
+
+            <!-- Honeypot: hidden from people, filled in by bots. Leave empty. -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form__actions">
+              <button class="button" type="submit">Send message</button>
+            </div>
+
+            <div id="form-status" role="alert"></div>
+          </form>
+
+          <div id="form-success" class="notice notice--success" tabindex="-1" hidden>
+            <h2>Message sent</h2>
+            <p>Thanks — I’ve got your message and will reply to the email address you gave.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer: keep identical across all pages. -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 Matthew Friedler</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/matthewfriedler/">LinkedIn</a></li>
+        <li><a href="https://github.com/matthewfriedler">GitHub</a></li>
+        <li><a class="break-anywhere" href="mailto:matthewfriedler@gmail.com">matthewfriedler@gmail.com</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

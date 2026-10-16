@@ -54,6 +54,25 @@ Accessibility rules: visible `:focus-visible` ring everywhere; skip link;
 44px min touch targets on buttons; `prefers-reduced-motion` kills transitions;
 `overflow-wrap` set so long URLs/emails never cause horizontal scroll at 375px.
 
+## Contact form
+- `contact.html` + `contact.js` (client validation, inline errors, success panel,
+  failure message with mailto fallback — never fail silently).
+- `api/contact.js` re-validates, checks a honeypot field (`website`), then POSTs
+  to `https://api.resend.com/emails`. Delivers to matthewfriedler@gmail.com,
+  `reply_to` = the visitor. Validation rules are duplicated in both files —
+  keep them in sync.
+- Sender defaults to `onboarding@resend.dev` (Resend test sender: only delivers
+  to the Resend account's own email). Set `CONTACT_FROM` after verifying a domain.
+- Responses: 200 ok · 400 invalid (+fields) · 405 wrong method ·
+  500 not_configured (no key) · 502 send_failed.
+
+## Testing checklist (what "verified" means here)
+- `node dev-server.js`, load `/`, `/about`, `/contact`.
+- curl `/api/contact` with: GET, `{}`, bad email, honeypot filled, valid payload.
+- Browser at 375 / 768 / 1280 (and 320 for reflow): no horizontal scroll.
+- axe-core (WCAG 2.2 AA + best-practice): 0 violations; every Tab stop shows
+  the focus ring.
+
 ## Run locally
 ```
 node dev-server.js          # http://localhost:3000  (Node 18+, no install)
