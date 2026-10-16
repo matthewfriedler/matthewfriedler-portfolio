@@ -1,0 +1,5 @@
+# Repo-only files that should not be served publicly
+dev-server.js
+CLAUDE.md
+README.md
+.env.example
