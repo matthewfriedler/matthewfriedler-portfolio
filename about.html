@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Matthew Friedler</title>
+  <meta name="description" content="About Matthew Friedler: training at Contentsquare, moving toward solutions consulting, and small web apps built to learn by doing.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared header: keep identical across index.html, about.html, contact.html
+       (only aria-current moves). -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-name" href="/">Matthew Friedler</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about" aria-current="page">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" aria-labelledby="about-heading">
+      <div class="container about">
+        <img class="about__photo" src="/assets/headshot.jpg" width="800" height="1000"
+             alt="Matthew Friedler">
+        <div class="about__text stack">
+          <h1 id="about-heading">About me</h1>
+          <p class="lede">I’m a Training Specialist at Contentsquare, the digital experience analytics platform.</p>
+          <p>My job is helping customers get from “we bought this” to “we use this.” I build and run training that teaches teams to find where visitors struggle on their websites and apps, and to turn what they find into changes worth making.</p>
+          <p>The part I enjoy most is the conversation before the training: working out what a team is actually trying to fix, then showing them the shortest path to it in the product. That’s most of what solutions consultants and presales teams do, and it’s the direction I’m moving in.</p>
+          <p>Outside work, I build small web apps to learn by doing. I’d rather understand how something works by building a version of it than by reading about it. Two of them are below.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <div class="projects">
+
+          <!-- PROJECT CARD TEMPLATE — to add a project, copy one <article> block,
+               paste it after the last one, and edit the name, summary, tags and links.
+               Remove the "Live site" <li> if there is no live link. -->
+          <article class="project">
+            <h3 class="project__name">Russian Flashcards</h3>
+            <p class="project__summary">A single-file web app with 277 phrases, audio at two speeds, and category filters. I built it to learn Russian with spaced repetition.</p>
+            <ul class="tags" aria-label="Built with">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <ul class="project__links">
+              <li><a href="https://matthewfriedler.github.io/russian-flashcards/">Live site<span class="visually-hidden"> for Russian Flashcards</span></a></li>
+              <li><a href="https://github.com/matthewfriedler/russian-flashcards">Code on GitHub<span class="visually-hidden"> for Russian Flashcards</span></a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3 class="project__name">BarPulse</h3>
+            <p class="project__summary">A live bar capacity and wait-time tracker for San Francisco’s Marina and Cow Hollow neighborhoods, built on GPS-verified crowd reports.</p>
+            <ul class="tags" aria-label="Built with">
+              <li>React</li>
+              <li>TanStack Start</li>
+              <li>Supabase</li>
+              <li>Leaflet</li>
+            </ul>
+            <ul class="project__links">
+              <li><a href="https://github.com/matthewfriedler/bar-pulse-sf">Code on GitHub<span class="visually-hidden"> for BarPulse</span></a></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="next-heading">
+      <div class="container stack">
+        <h2 id="next-heading">Let’s talk</h2>
+        <p>If you’re hiring for solutions consulting or presales, I’d like to hear from you.</p>
+        <div class="button-row">
+          <a class="button" href="/contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer: keep identical across all pages. -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 Matthew Friedler</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/matthewfriedler/">LinkedIn</a></li>
+        <li><a href="https://github.com/matthewfriedler">GitHub</a></li>
+        <li><a class="break-anywhere" href="mailto:matthewfriedler@gmail.com">matthewfriedler@gmail.com</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
