@@ -4,21 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Matthew Friedler</title>
-  <meta name="description" content="Get in touch with Matthew Friedler about solutions consulting and presales roles.">
+  <meta name="description" content="Get in touch with Matthew Friedler.">
+  <meta name="theme-color" content="#0e2a1f">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="/site.js" defer></script>
   <script src="/contact.js" defer></script>
-</head>
-<body>
+</head><body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Shared header: keep identical across index.html, about.html, contact.html
        (only aria-current moves). -->
-  <header class="site-header">
+  <header class="site-header on-dark">
     <div class="container site-header__inner">
-      <a class="site-name" href="/">Matthew Friedler</a>
+      <a class="site-name" href="/"><span class="site-name__mark" aria-hidden="true">MF</span>Matthew Friedler</a>
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="/">Home</a></li>
@@ -30,28 +32,47 @@
   </header>
 
   <main id="main">
+    <section class="hero on-dark">
+      <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow enter" style="--i:0">Contact</p>
+        <h1 class="enter" style="--i:1">Let’s connect</h1>
+        <p class="lede enter" style="--i:2">I’m always open to a good conversation — about customer education, digital analytics, side projects, or anything in between. Send a note and I’ll reply by email.</p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container contact">
-        <div class="contact__intro stack">
-          <h1>Get in touch</h1>
-          <p class="lede">Hiring for solutions consulting or presales, or just want to talk shop? Send me a note and I’ll reply by email.</p>
+        <div class="contact__intro stack reveal">
+          <h2>Other ways to reach me</h2>
           <ul class="contact-links">
-            <li><span class="contact-links__label">Email</span>
-              <a class="break-anywhere" href="mailto:matthewfriedler@gmail.com">matthewfriedler@gmail.com</a></li>
-            <li><span class="contact-links__label">LinkedIn</span>
-              <a class="break-anywhere" href="https://www.linkedin.com/in/matthewfriedler/">linkedin.com/in/matthewfriedler</a></li>
-            <li><span class="contact-links__label">GitHub</span>
-              <a class="break-anywhere" href="https://github.com/matthewfriedler">github.com/matthewfriedler</a></li>
+            <li><a href="mailto:matthewfriedler@gmail.com">
+              <span class="contact-links__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
+              <span class="contact-links__text"><span class="contact-links__label">Email</span>
+                <span class="contact-links__value">matthewfriedler@gmail.com</span></span>
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/matthewfriedler/">
+              <span class="contact-links__icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg></span>
+              <span class="contact-links__text"><span class="contact-links__label">LinkedIn</span>
+                <span class="contact-links__value">linkedin.com/in/matthewfriedler</span></span>
+            </a></li>
+            <li><a href="https://github.com/matthewfriedler">
+              <span class="contact-links__icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></span>
+              <span class="contact-links__text"><span class="contact-links__label">GitHub</span>
+                <span class="contact-links__value">github.com/matthewfriedler</span></span>
+            </a></li>
           </ul>
         </div>
 
-        <div class="contact__form">
+        <div class="contact__form reveal" style="--i:1">
           <noscript>
             <p class="notice notice--error">The form needs JavaScript. You can email me directly at
               <a class="break-anywhere" href="mailto:matthewfriedler@gmail.com">matthewfriedler@gmail.com</a>.</p>
           </noscript>
 
           <form id="contact-form" class="form" novalidate>
+            <h2 class="visually-hidden">Send a message</h2>
             <div class="field">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required
@@ -80,7 +101,7 @@
             </div>
 
             <div class="form__actions">
-              <button class="button" type="submit">Send message</button>
+              <button class="button" type="submit">Send message <span class="button__arrow" aria-hidden="true">→</span></button>
             </div>
 
             <div id="form-status" role="alert"></div>
@@ -96,9 +117,9 @@
   </main>
 
   <!-- Shared footer: keep identical across all pages. -->
-  <footer class="site-footer">
+  <footer class="site-footer on-dark">
     <div class="container site-footer__inner">
-      <p>© 2026 Matthew Friedler</p>
+      <p>© 2026 Matthew Friedler · San Francisco</p>
       <ul>
         <li><a href="https://www.linkedin.com/in/matthewfriedler/">LinkedIn</a></li>
         <li><a href="https://github.com/matthewfriedler">GitHub</a></li>

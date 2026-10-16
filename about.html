@@ -4,20 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — Matthew Friedler</title>
-  <meta name="description" content="About Matthew Friedler: training at Contentsquare, moving toward solutions consulting, and small web apps built to learn by doing.">
+  <meta name="description" content="About Matthew Friedler: training at Contentsquare, and small web apps built to learn by doing.">
+  <meta name="theme-color" content="#0e2a1f">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="/site.js" defer></script>
+</head><body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Shared header: keep identical across index.html, about.html, contact.html
        (only aria-current moves). -->
-  <header class="site-header">
+  <header class="site-header on-dark">
     <div class="container site-header__inner">
-      <a class="site-name" href="/">Matthew Friedler</a>
+      <a class="site-name" href="/"><span class="site-name__mark" aria-hidden="true">MF</span>Matthew Friedler</a>
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="/">Home</a></li>
@@ -29,29 +31,43 @@
   </header>
 
   <main id="main">
-    <section class="section" aria-labelledby="about-heading">
+    <section class="hero on-dark">
+      <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow enter" style="--i:0">About</p>
+        <h1 class="enter" style="--i:1">About me</h1>
+        <p class="lede enter" style="--i:2">Training Specialist at Contentsquare. Builder of small web apps on the side.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Bio">
       <div class="container about">
-        <img class="about__photo" src="/assets/headshot.jpg" width="800" height="1000"
-             alt="Matthew Friedler">
-        <div class="about__text stack">
-          <h1 id="about-heading">About me</h1>
+        <div class="about__photo-wrap reveal">
+          <img class="about__photo" src="/assets/headshot.jpg" width="800" height="1000" alt="Matthew Friedler">
+        </div>
+        <div class="about__text stack reveal" style="--i:1">
           <p class="lede">I’m a Training Specialist at Contentsquare, the digital experience analytics platform.</p>
           <p>My job is helping customers get from “we bought this” to “we use this.” I build and run training that teaches teams to find where visitors struggle on their websites and apps, and to turn what they find into changes worth making.</p>
-          <p>The part I enjoy most is the conversation before the training: working out what a team is actually trying to fix, then showing them the shortest path to it in the product. That’s most of what solutions consultants and presales teams do, and it’s the direction I’m moving in.</p>
-          <p>Outside work, I build small web apps to learn by doing. I’d rather understand how something works by building a version of it than by reading about it. Two of them are below.</p>
+          <p>The part I enjoy most is the conversation before the training: working out what a team is actually trying to fix, then finding the shortest path to it in the product.</p>
+          <p>Outside work, I build small web apps to learn by doing. I’d rather understand how something works by building a version of it than by reading about it. A few of them are below.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="projects-heading">
+    <section id="projects" class="section section--alt" aria-labelledby="projects-heading">
       <div class="container">
-        <h2 id="projects-heading">Projects</h2>
+        <div class="section-head reveal">
+          <p class="eyebrow">Side projects</p>
+          <h2 id="projects-heading">Projects</h2>
+        </div>
         <div class="projects">
 
           <!-- PROJECT CARD TEMPLATE — to add a project, copy one <article> block,
-               paste it after the last one, and edit the name, summary, tags and links.
-               Remove the "Live site" <li> if there is no live link. -->
-          <article class="project">
+               paste it after the last one, and edit the icon, name, summary, tags
+               and links. Remove the "Live site" <li> if there is no live link. -->
+          <article class="project reveal" style="--i:0">
+            <div class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg></div>
             <h3 class="project__name">Russian Flashcards</h3>
             <p class="project__summary">A single-file web app with 277 phrases, audio at two speeds, and category filters. I built it to learn Russian with spaced repetition.</p>
             <ul class="tags" aria-label="Built with">
@@ -60,12 +76,12 @@
               <li>JavaScript</li>
             </ul>
             <ul class="project__links">
-              <li><a href="https://matthewfriedler.github.io/russian-flashcards/">Live site<span class="visually-hidden"> for Russian Flashcards</span></a></li>
-              <li><a href="https://github.com/matthewfriedler/russian-flashcards">Code on GitHub<span class="visually-hidden"> for Russian Flashcards</span></a></li>
+              <li><a class="arrow-link" href="https://matthewfriedler.github.io/russian-flashcards/">Live site<span class="visually-hidden"> for Russian Flashcards</span> <span aria-hidden="true">↗</span></a></li>
+              <li><a class="arrow-link" href="https://github.com/matthewfriedler/russian-flashcards">Code on GitHub<span class="visually-hidden"> for Russian Flashcards</span> <span aria-hidden="true">↗</span></a></li>
             </ul>
           </article>
-
-          <article class="project">
+          <article class="project reveal" style="--i:1">
+            <div class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
             <h3 class="project__name">BarPulse</h3>
             <p class="project__summary">A live bar capacity and wait-time tracker for San Francisco’s Marina and Cow Hollow neighborhoods, built on GPS-verified crowd reports.</p>
             <ul class="tags" aria-label="Built with">
@@ -75,7 +91,20 @@
               <li>Leaflet</li>
             </ul>
             <ul class="project__links">
-              <li><a href="https://github.com/matthewfriedler/bar-pulse-sf">Code on GitHub<span class="visually-hidden"> for BarPulse</span></a></li>
+              <li><a class="arrow-link" href="https://github.com/matthewfriedler/bar-pulse-sf">Code on GitHub<span class="visually-hidden"> for BarPulse</span> <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+          <article class="project reveal" style="--i:2">
+            <div class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+            <h3 class="project__name">Split the Tab</h3>
+            <p class="project__summary">Splits restaurant checks fairly: snap a photo of each receipt, tap who had what, and it works out what everyone owes — with tax, tip and fees shared in proportion, down to the penny.</p>
+            <ul class="tags" aria-label="Built with">
+              <li>JavaScript</li>
+              <li>Tesseract.js</li>
+              <li>Gemini API</li>
+            </ul>
+            <ul class="project__links">
+              <li><a class="arrow-link" href="https://github.com/matthewfriedler/split-the-tab">Code on GitHub<span class="visually-hidden"> for Split the Tab</span> <span aria-hidden="true">↗</span></a></li>
             </ul>
           </article>
 
@@ -83,21 +112,23 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="next-heading">
-      <div class="container stack">
-        <h2 id="next-heading">Let’s talk</h2>
-        <p>If you’re hiring for solutions consulting or presales, I’d like to hear from you.</p>
-        <div class="button-row">
-          <a class="button" href="/contact">Get in touch</a>
+    <section class="section section--tight" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta on-dark reveal">
+          <div>
+            <h2 id="cta-heading">Always happy to connect</h2>
+            <p>Customer education, digital analytics, a side project you’re building — I’m open to a conversation.</p>
+          </div>
+          <a class="button" href="/contact">Get in touch <span class="button__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Shared footer: keep identical across all pages. -->
-  <footer class="site-footer">
+  <footer class="site-footer on-dark">
     <div class="container site-footer__inner">
-      <p>© 2026 Matthew Friedler</p>
+      <p>© 2026 Matthew Friedler · San Francisco</p>
       <ul>
         <li><a href="https://www.linkedin.com/in/matthewfriedler/">LinkedIn</a></li>
         <li><a href="https://github.com/matthewfriedler">GitHub</a></li>
